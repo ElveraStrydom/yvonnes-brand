@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yvonne's Brand Options</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Caveat:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+img{max-width:100%}
+
+/* Layout: a quiet reading column; the logos are the only colour on the page. */
+:root{
+  --bg:#FBFAF7; --fg:#1F1B18; --muted:#6B6259; --rule:#E4DED4; --panel:#F3F0EA;
+  --accent:#86363F;
+  --serif:'Libre Caslon Text',Georgia,'Times New Roman',serif;
+  --hand:'Caveat','Segoe Script','Bradley Hand',cursive;
+  --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1A1715; --fg:#EFE9E0; --muted:#A79D91; --rule:#332E29; --panel:#221E1B; --accent:#D99AA0; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1A1715; --fg:#EFE9E0; --muted:#A79D91; --rule:#332E29; --panel:#221E1B; --accent:#D99AA0; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:17px;line-height:1.6}
+.wrap{max-width:1040px;margin:0 auto;padding-block:48px 96px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;text-wrap:balance;margin:0}
+h1{font-size:clamp(34px,5vw,52px)}
+h2{font-size:clamp(26px,3.4vw,34px)}
+h3{font-size:22px}
+p{margin:0;max-width:68ch}
+.eyebrow{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.lede{font-size:19px;color:var(--muted);max-width:60ch}
+header{display:flex;flex-direction:column;gap:14px;padding-bottom:40px;border-bottom:1px solid var(--rule)}
+section{display:flex;flex-direction:column;gap:22px;padding-block:48px;border-bottom:1px solid var(--rule)}
+section:last-of-type{border-bottom:0}
+.sechead{display:flex;flex-direction:column;gap:8px}
+.prose{display:flex;flex-direction:column;gap:14px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.two>*{min-width:0}
+.note{background:var(--panel);border-radius:6px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.note strong{font-weight:600}
+.verdict{border-left:3px solid var(--accent);padding:4px 0 4px 18px;font-family:var(--serif);font-size:20px;line-height:1.4}
+.cands{display:flex;flex-direction:column;gap:10px;list-style:none;padding:0;margin:0}
+.cands li{display:grid;grid-template-columns:minmax(150px,220px) 1fr;gap:16px;padding:12px 0;border-top:1px solid var(--rule)}
+.cands li:last-child{border-bottom:1px solid var(--rule)}
+.cands .name{font-family:var(--hand);font-size:28px;line-height:1.1}
+.cands .why{color:var(--muted);font-size:15.5px}
+@media (max-width:520px){.cands li{grid-template-columns:1fr;gap:4px}}
+/* type specimens */
+.spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.spec>*{min-width:0}
+.specimen{background:var(--panel);border-radius:6px;padding:26px 24px;display:flex;flex-direction:column;gap:14px}
+.specimen .sample{line-height:1.05;word-break:break-word}
+.specimen .caslon{font-family:var(--serif);font-size:clamp(34px,6vw,56px);letter-spacing:.06em;text-transform:uppercase}
+.specimen .caveat{font-family:var(--hand);font-size:clamp(34px,6vw,54px);font-weight:500}
+.specimen .meta{font-size:14px;color:var(--muted)}
+/* swatches */
+.swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+.sw{display:flex;flex-direction:column;gap:8px;min-width:0}
+.sw .chip{height:64px;border-radius:6px;border:1px solid var(--rule)}
+.sw .lab{font-size:14px;font-weight:600}
+.sw .hex{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+/* options */
+.opt{display:flex;flex-direction:column;gap:20px}
+.opthead{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 18px}
+.opthead .pair{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.grid{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:auto auto;gap:16px}
+.grid>*{min-width:0}
+@media (max-width:640px){.grid{grid-template-columns:1fr}}
+.tile{container-type:inline-size;border-radius:4px;overflow:hidden;position:relative;max-width:100%}
+.tile.land{aspect-ratio:2/1}
+.tile.sq{aspect-ratio:1/1}
+.tile .tag{position:absolute;left:10px;top:8px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;opacity:.55;color:var(--ink)}
+.logo{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--ground);color:var(--ink);font-family:var(--serif);text-align:center;padding:6% 8%}
+.logo .name{font-size:13.3cqw;line-height:1;letter-spacing:.06em;text-transform:uppercase;margin-left:.06em}
+.logo .ruler{display:flex;align-items:center;gap:2.3cqw;width:100%;margin-top:2.8cqw}
+.logo .ruler i{flex:1 1 0;height:1px;background:var(--ink);opacity:.6}
+.logo .est{font-size:1.67cqw;letter-spacing:.32em;text-transform:uppercase;white-space:nowrap;margin-right:-.32em}
+.logo .tag2{font-family:var(--hand);font-weight:500;font-size:5.3cqw;line-height:1.1;margin-top:1.8cqw}
+.sq .logo{padding:10% 8%}
+.sq .logo .est{font-size:2.25cqw;letter-spacing:.34em;margin:0 -.34em 3.2cqw 0;opacity:.85}
+.sq .logo .name{font-size:14.75cqw}
+.sq .logo .sep{width:27.5cqw;height:1px;background:var(--ink);opacity:.6;margin:5cqw 0 3.5cqw}
+.sq .logo .tag2{font-size:7.25cqw;margin-top:0}
+.optnotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.optnotes>*{min-width:0}
+.optnotes h4{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.optnotes p{font-size:15.5px}
+.use{font-size:14px;color:var(--muted)}
+footer{padding-top:32px;font-size:14px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+@media (prefers-reduced-motion:no-preference){.tile{transition:transform .2s ease}.tile:hover{transform:translateY(-2px)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Rebrand · November 2026</div>
+  <h1>Yvonne’s: three directions</h1>
+  <p class="lede">One logo, one slogan, one pair of typefaces, and three colour directions to choose between. Each is shown on its cream ground and reversed on its own colour, in landscape and square.</p>
+</header>
+
+<section>
+  <div class="sechead">
+    <div class="eyebrow">01 · The slogan</div>
+    <h2>Time-honoured recipes</h2>
+  </div>
+  <div class="prose">
+    <p>Three lines were on the table. One of them does a different job from the other two, and that decides it.</p>
+    <ul class="cands">
+      <li><span class="name">Artisanal bakes</span><span class="why">Tells a stranger what the business is. Useful, but it is a label rather than a slogan, and “artisanal” is the most worn-out word in food. Keep it as a small descriptor if ever needed, not as the line.</span></li>
+      <li><span class="name">Traditionally crafted</span><span class="why">Hits craftsmanship, but it is interchangeable with a hundred other bakeries and slightly stiff to say out loud.</span></li>
+      <li><span class="name">Time-honoured recipes</span><span class="why">The warmest of the three, the best rhythm, and the one that points at the real story: a handwritten cookbook passed from mother to daughter. Hyphenated, because “time-honoured” is one idea.</span></li>
+    </ul>
+    <div class="verdict">Time-honoured recipes carries heritage and warmth without explaining itself. The new recipes still belong under it, because they are made the time-honoured way, in the same kitchen tradition.</div>
+    <p>A line to keep in reserve for packaging or social, if a second voice is ever wanted: <em>Recipes worth handing down.</em> It honours Yvonne’s recipes and quietly promises the new ones will earn the same place.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sechead">
+    <div class="eyebrow">02 · The typefaces</div>
+    <h2>A book face and a handwritten one</h2>
+  </div>
+  <div class="spec">
+    <div class="specimen">
+      <div class="sample caslon">Yvonne’s</div>
+      <div><strong>Libre Caslon</strong> for the name</div>
+      <p class="meta">Caslon is an eighteenth-century English book type, the face of old cookbooks, newspapers and shop fascias. Its strokes are sturdy rather than hairline, so the name survives being shrunk to a WhatsApp profile picture or printed on a box sticker. Set in spaced capitals, it reads as established and permanent, the way lettering over a shop door does.</p>
+    </div>
+    <div class="specimen">
+      <div class="sample caveat">Time-honoured recipes</div>
+      <div><strong>Caveat</strong> for the slogan</div>
+      <p class="meta">Handwriting, not calligraphy. The earlier scripts looked like a wedding invitation; this looks like a note in the margin of a recipe. It stays legible at small sizes and gives the logo its warmth and human hand. The best version of this logo replaces it with a line in Yvonne’s own handwriting, scanned from the cookbook.</p>
+    </div>
+  </div>
+  <p>The pairing is the idea in miniature: a formal, long-lived name above an informal, personal line. Quality and heritage from the serif; warmth and authenticity from the hand.</p>
+</section>
+
+<section>
+  <div class="sechead">
+    <div class="eyebrow">03 · The colours</div>
+    <h2>One cream, three inks</h2>
+  </div>
+  <div class="prose">
+    <p>The background stays the same across all three directions. Cream is butter, flour, parchment and the yellowed page of an old notebook. It is warm without competing with the food, and it is the ground forecasters expect to replace grey in 2026. Each direction then changes only the ink, which is what gives the brand its character.</p>
+  </div>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#F6EDDF"></div><div class="lab">Cream</div><div class="hex">#F6EDDF · ground for A and B</div></div>
+    <div class="sw"><div class="chip" style="background:#F5EFE6"></div><div class="lab">Light cream</div><div class="hex">#F5EFE6 · ground for C</div></div>
+    <div class="sw"><div class="chip" style="background:#86363F"></div><div class="lab">Burgundy</div><div class="hex">#86363F · ink A</div></div>
+    <div class="sw"><div class="chip" style="background:#356373"></div><div class="lab">Deep teal</div><div class="hex">#356373 · ink B</div></div>
+    <div class="sw"><div class="chip" style="background:#2F4A86"></div><div class="lab">Delft blue</div><div class="hex">#2F4A86 · ink C</div></div>
+  </div>
+  <div class="two">
+    <div class="note"><strong>Why not brown</strong><p>Brown on cream says handcrafted and traditional, which is exactly why every home bakery uses it. The brief asks for warmth and heritage, but a logo also has to be hers. Each of the three inks below keeps the heritage feeling while standing apart from the brown-and-kraft crowd.</p></div>
+    <div class="note"><strong>Why these three</strong><p>All three clear the strictest contrast standard for large lettering on their cream, so they will hold up on a sticker, a bag or a phone. Their depth is deliberate: research on logo colour shows darker logos make a brand feel older and lighter ones younger, so each ink sits in the middle of the scale, dark enough to read as established, light enough not to read as dated. The set covers one warm, one cool and one bright direction.</p></div>
+  </div>
+</section>
+
+<section class="opt">
+  <div class="opthead">
+    <div class="eyebrow">Option A</div>
+    <h2>Burgundy</h2>
+    <span class="pair">#86363F on cream #F6EDDF</span>
+  </div>
+  <div class="grid">
+    <div class="tile land" style="--ink:#86363F;--ground:#F6EDDF"><span class="tag">Light · landscape</span><div class="logo"><div class="name">Yvonne’s</div><div class="ruler"><i></i><span class="est">Est. 2027</span><i></i></div><div class="tag2">Time-honoured recipes</div></div></div>
+    <div class="tile sq" style="--ink:#86363F;--ground:#F6EDDF"><span class="tag">Light · square</span><div class="logo"><div class="est">Est. 2027</div><div class="name">Yvonne’s</div><div class="sep"></div><div class="tag2">Time-honoured recipes</div></div></div>
+    <div class="tile land" style="--ink:#F6EDDF;--ground:#86363F"><span class="tag">Dark · landscape</span><div class="logo"><div class="name">Yvonne’s</div><div class="ruler"><i></i><span class="est">Est. 2027</span><i></i></div><div class="tag2">Time-honoured recipes</div></div></div>
+    <div class="tile sq" style="--ink:#F6EDDF;--ground:#86363F"><span class="tag">Dark · square</span><div class="logo"><div class="est">Est. 2027</div><div class="name">Yvonne’s</div><div class="sep"></div><div class="tag2">Time-honoured recipes</div></div></div>
+  </div>
+  <div class="optnotes">
+    <div><h4>The ink</h4><p>Jam, red wine, a leather-bound book. Burgundy is warm, rich and old, which is the whole brief in one colour. It is almost never used by home bakeries, so it is distinctive without trying to be.</p></div>
+    <div><h4>The ground</h4><p>Standard cream. Burgundy and cream is a documented “richer tones” pairing for bakeries and reads like a preserve label from a good delicatessen.</p></div>
+    <div><h4>Reversed</h4><p>Cream lettering on burgundy is the strongest dark version of the three: it looks like foil-stamped packaging and suits ribbon, boxes and gift tags.</p></div>
+  </div>
+  <p class="use">Best if the brand should feel warm first and distinctive second.</p>
+</section>
+
+<section class="opt">
+  <div class="opthead">
+    <div class="eyebrow">Option B</div>
+    <h2>Deep teal</h2>
+    <span class="pair">#356373 on cream #F6EDDF</span>
+  </div>
+  <div class="grid">
+    <div class="tile land" style="--ink:#356373;--ground:#F6EDDF"><span class="tag">Light · landscape</span><div class="logo"><div class="name">Yvonne’s</div><div class="ruler"><i></i><span class="est">Est. 2027</span><i></i></div><div class="tag2">Time-honoured recipes</div></div></div>
+    <div class="tile sq" style="--ink:#356373;--ground:#F6EDDF"><span class="tag">Light · square</span><div class="logo"><div class="est">Est. 2027</div><div class="name">Yvonne’s</div><div class="sep"></div><div class="tag2">Time-honoured recipes</div></div></div>
+    <div class="tile land" style="--ink:#F6EDDF;--ground:#356373"><span class="tag">Dark · landscape</span><div class="logo"><div class="name">Yvonne’s</div><div class="ruler"><i></i><span class="est">Est. 2027</span><i></i></div><div class="tag2">Time-honoured recipes</div></div></div>
+    <div class="tile sq" style="--ink:#F6EDDF;--ground:#356373"><span class="tag">Dark · square</span><div class="logo"><div class="est">Est. 2027</div><div class="name">Yvonne’s</div><div class="sep"></div><div class="tag2">Time-honoured recipes</div></div></div>
+  </div>
+  <div class="optnotes">
+    <div><h4>The ink</h4><p>Enamelware, old kitchen tiles, an apothecary jar. Deep teal is the forecasters’ anchor colour for 2026 and the most distinctive of the three. It is calm and confident rather than warm; the warmth comes from the cream, the handwriting and photographs of the bakes.</p></div>
+    <div><h4>The ground</h4><p>Standard cream. Teal is specifically recommended on cream rather than white, which softens it and keeps it from reading as corporate or clinical.</p></div>
+    <div><h4>Reversed</h4><p>Cream on teal has a mid-century grocer feel. Pair it with a single warm accent, such as terracotta or mustard, on packaging so the whole set stays inviting.</p></div>
+  </div>
+  <p class="use">Best if standing out matters more than feeling cosy.</p>
+</section>
+
+<section class="opt">
+  <div class="opthead">
+    <div class="eyebrow">Option C</div>
+    <h2>Delft blue</h2>
+    <span class="pair">#2F4A86 on light cream #F5EFE6</span>
+  </div>
+  <div class="grid">
+    <div class="tile land" style="--ink:#2F4A86;--ground:#F5EFE6"><span class="tag">Light · landscape</span><div class="logo"><div class="name">Yvonne’s</div><div class="ruler"><i></i><span class="est">Est. 2027</span><i></i></div><div class="tag2">Time-honoured recipes</div></div></div>
+    <div class="tile sq" style="--ink:#2F4A86;--ground:#F5EFE6"><span class="tag">Light · square</span><div class="logo"><div class="est">Est. 2027</div><div class="name">Yvonne’s</div><div class="sep"></div><div class="tag2">Time-honoured recipes</div></div></div>
+    <div class="tile land" style="--ink:#F5EFE6;--ground:#2F4A86"><span class="tag">Dark · landscape</span><div class="logo"><div class="name">Yvonne’s</div><div class="ruler"><i></i><span class="est">Est. 2027</span><i></i></div><div class="tag2">Time-honoured recipes</div></div></div>
+    <div class="tile sq" style="--ink:#F5EFE6;--ground:#2F4A86"><span class="tag">Dark · square</span><div class="logo"><div class="est">Est. 2027</div><div class="name">Yvonne’s</div><div class="sep"></div><div class="tag2">Time-honoured recipes</div></div></div>
+  </div>
+  <div class="optnotes">
+    <div><h4>The ink</h4><p>The blue of Delft pottery and old enamel kitchenware: cobalt’s heritage cousin. Cobalt is the defining colour of 2026 across fashion and interiors, and this is the version of it that still belongs in a kitchen. It is lively where navy is heavy, and it flatters golden-brown bakes by contrast.</p></div>
+    <div><h4>The ground</h4><p>A slightly lighter, less yellow cream. Designers pair cobalt with whites and warm whites rather than butter tones, and Delft pottery itself is blue on a pale glaze. This cream keeps the blue bright and the lettering crisp.</p></div>
+    <div><h4>Reversed</h4><p>Cream on Delft blue looks like a painted shop sign or a tin of biscuits. It is the brightest of the three dark versions and works well as a sticker on kraft paper.</p></div>
+  </div>
+  <p class="use">Best if the brand should feel fresh and current while still looking like it has a history.</p>
+</section>
+
+<footer>
+  <div>The establishment year is set to 2027 on every version and can be changed. The monogram stamp (a single Y in a double ring) and all exports are in the working canvas.</div>
+  <div>Colour choices drawn from current bakery-branding and colour-pairing references and from published research on logo colour lightness; every ink clears the strictest contrast level for large lettering on its cream, and each cream was checked against designer guidance for that specific ink.</div>
+</footer>
+</div>
+</body>
+</html>
