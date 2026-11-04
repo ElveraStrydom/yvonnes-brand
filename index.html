@@ -99,6 +99,34 @@ section:last-of-type{border-bottom:0}
 .role{display:flex;flex-direction:column;gap:4px;border-top:2px solid var(--rule);padding-top:10px;min-width:0}
 .role strong{font-weight:600}
 .role span{font-size:15.5px;color:var(--muted)}
+section.group{padding-bottom:8px;border-bottom:0}
+.steps{display:flex;flex-direction:column;gap:12px;margin:0;padding-left:1.4em;max-width:68ch}
+.steps li{padding-left:4px}
+.steps strong{font-weight:600}
+@media print{
+  :root:root:root{--bg:#FFFFFF;--fg:#1F1B18;--muted:#5A524A;--rule:#E4DED4;--panel:#F3F0EA;--accent:#86363F;color-scheme:light}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{margin:12mm}
+  body{font-size:11pt}
+  .wrap{padding:0;max-width:none}
+  section.opt{break-before:page}
+  section.group{break-before:page;break-after:avoid}
+  section.group + section.opt{break-before:avoid}
+  .grid,.palette,.note,.optnotes>div,.steps li,.specimen,.cands li{break-inside:avoid}
+  .tile{transition:none}
+  section{padding-block:20px;gap:14px}
+  .opt{gap:12px}
+  .grid{max-width:150mm;gap:8px}
+  .swatches{grid-template-columns:repeat(5,1fr);gap:10px}
+  .sw .chip{height:36px}
+  .optnotes{gap:12px;grid-template-columns:repeat(3,1fr)}
+  .optnotes p,.sw .for,.use{font-size:9.5pt}
+  .feeling{font-size:13pt}
+  section.group+section.opt .grid{max-width:108mm}
+  .sechead{break-inside:avoid;break-after:avoid}
+  section.group{padding-bottom:0}
+  footer{break-inside:avoid}
+}
 footer{padding-top:32px;font-size:14px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
 @media (prefers-reduced-motion:no-preference){.tile{transition:transform .2s ease}.tile:hover{transform:translateY(-2px)}}
 </style>
@@ -108,7 +136,7 @@ footer{padding-top:32px;font-size:14px;color:var(--muted);display:flex;flex-dire
 <header>
   <div class="eyebrow">Rebrand · November 2026</div>
   <h1>Yvonne’s: five directions</h1>
-  <p class="lede">One logo, one slogan, one pair of typefaces, and five colour directions to choose between. Each is shown on its own cream and reversed on its main colour, in landscape and square, with the full palette underneath.</p>
+  <p class="lede">One logo, one slogan, one pair of typefaces, and three recommended colour directions and two more that were also considered. Each is shown on its own cream and reversed on its main colour, in landscape and square, with the full palette underneath, followed by how to take it to a printer and test it with people.</p>
 </header>
 
 <section>
@@ -169,6 +197,16 @@ footer{padding-top:32px;font-size:14px;color:var(--muted);display:flex;flex-dire
   </div>
 </section>
 
+<section class="group">
+  <div class="sechead">
+    <div class="eyebrow">The top three</div>
+    <h2>One warm, one cool, one natural</h2>
+  </div>
+  <div class="prose">
+    <p>These three are the clearest to read and the most different from each other, so they make a fair choice. Each has a story a customer understands at a glance: a family cookbook, Delft pottery, a country kitchen.</p>
+  </div>
+</section>
+
 <section class="opt">
   <div class="opthead">
     <div class="eyebrow">Option A</div>
@@ -188,7 +226,7 @@ footer{padding-top:32px;font-size:14px;color:var(--muted);display:flex;flex-dire
     <div class="sw"><div class="chip" style="background:#86363F"></div><div class="lab">Burgundy</div><div class="hex">#86363F</div><div class="for">Main logo, headings, packaging</div></div>
     <div class="sw"><div class="chip" style="background:#F5EDE3"></div><div class="lab">Warm ivory</div><div class="hex">#F5EDE3</div><div class="for">Main background, website</div></div>
     <div class="sw"><div class="chip" style="background:#D8B9AC"></div><div class="lab">Dusty blush</div><div class="hex">#D8B9AC</div><div class="for">Secondary panels, tissue paper</div></div>
-    <div class="sw"><div class="chip" style="background:#B98B62"></div><div class="lab">Antique caramel</div><div class="hex">#B98B62</div><div class="for">Decorative accents, labels</div></div>
+    <div class="sw"><div class="chip" style="background:#B98B62"></div><div class="lab">Antique caramel</div><div class="hex">#B98B62</div><div class="for">Lines, borders and stamps, never words</div></div>
     <div class="sw"><div class="chip" style="background:#59463F"></div><div class="lab">Espresso</div><div class="hex">#59463F</div><div class="for">Body text, fine print</div></div>
     </div>
   </div>
@@ -203,68 +241,6 @@ footer{padding-top:32px;font-size:14px;color:var(--muted);display:flex;flex-dire
 <section class="opt">
   <div class="opthead">
     <div class="eyebrow">Option B</div>
-    <h2>Warm terracotta</h2>
-    <span class="pair">#A65D4E on #F5E9DC</span>
-  </div>
-  <p class="feeling">Welcoming, handmade, delicious and personal. This direction feels particularly connected to baking.</p>
-  <div class="grid">
-    <div class="tile land" style="--ink:#A65D4E;--ground:#F5E9DC"><span class="tag">Light · landscape</span><div class="logo"><div class="name">Yvonne’s</div><div class="ruler"><i></i><span class="est">Est. 2027</span><i></i></div><div class="tag2">Time-honoured recipes</div></div></div>
-    <div class="tile sq" style="--ink:#A65D4E;--ground:#F5E9DC"><span class="tag">Light · square</span><div class="logo"><div class="est">Est. 2027</div><div class="name">Yvonne’s</div><div class="sep"></div><div class="tag2">Time-honoured recipes</div></div></div>
-    <div class="tile land" style="--ink:#F5E9DC;--ground:#A65D4E"><span class="tag">Dark · landscape</span><div class="logo"><div class="name">Yvonne’s</div><div class="ruler"><i></i><span class="est">Est. 2027</span><i></i></div><div class="tag2">Time-honoured recipes</div></div></div>
-    <div class="tile sq" style="--ink:#F5E9DC;--ground:#A65D4E"><span class="tag">Dark · square</span><div class="logo"><div class="est">Est. 2027</div><div class="name">Yvonne’s</div><div class="sep"></div><div class="tag2">Time-honoured recipes</div></div></div>
-  </div>
-  <div class="palette">
-    <div class="eyebrow">The palette</div>
-    <div class="swatches">
-    <div class="sw"><div class="chip" style="background:#A65D4E"></div><div class="lab">Warm terracotta</div><div class="hex">#A65D4E</div><div class="for">Main logo, headings, packaging</div></div>
-    <div class="sw"><div class="chip" style="background:#F5E9DC"></div><div class="lab">Biscuit cream</div><div class="hex">#F5E9DC</div><div class="for">Main background, website</div></div>
-    <div class="sw"><div class="chip" style="background:#D9A18E"></div><div class="lab">Soft clay</div><div class="hex">#D9A18E</div><div class="for">Secondary panels, packaging</div></div>
-    <div class="sw"><div class="chip" style="background:#C39A58"></div><div class="lab">Honey gold</div><div class="hex">#C39A58</div><div class="for">Small highlights, decorative details</div></div>
-    <div class="sw"><div class="chip" style="background:#55443B"></div><div class="lab">Dark cocoa</div><div class="hex">#55443B</div><div class="for">Body text, fine print</div></div>
-    </div>
-  </div>
-  <div class="optnotes">
-    <div><h4>The ink</h4><p>A baked crust, a clay oven, a flowerpot on the windowsill. The most edible-looking of the five, and the closest to the colour of the bakes themselves.</p></div>
-    <div><h4>The family</h4><p>All warm, no cool colour anywhere: biscuit, clay, honey and cocoa. Cosy, but it sits nearest to the brown-and-kraft look many home bakeries already use.</p></div>
-    <div><h4>Worth knowing</h4><p>Terracotta is the lightest of the five inks. It is clear in the logo and headings, but small print such as prices and ingredients should be in dark cocoa.</p></div>
-  </div>
-  <p class="use">Best if the brand should feel like the kitchen it comes from.</p>
-</section>
-
-<section class="opt">
-  <div class="opthead">
-    <div class="eyebrow">Option C</div>
-    <h2>Deep teal</h2>
-    <span class="pair">#356373 on #F1EEE5</span>
-  </div>
-  <p class="feeling">Refined, traditional and slightly more contemporary. Think vintage enamelware and an old-fashioned kitchen.</p>
-  <div class="grid">
-    <div class="tile land" style="--ink:#356373;--ground:#F1EEE5"><span class="tag">Light · landscape</span><div class="logo"><div class="name">Yvonne’s</div><div class="ruler"><i></i><span class="est">Est. 2027</span><i></i></div><div class="tag2">Time-honoured recipes</div></div></div>
-    <div class="tile sq" style="--ink:#356373;--ground:#F1EEE5"><span class="tag">Light · square</span><div class="logo"><div class="est">Est. 2027</div><div class="name">Yvonne’s</div><div class="sep"></div><div class="tag2">Time-honoured recipes</div></div></div>
-    <div class="tile land" style="--ink:#F1EEE5;--ground:#356373"><span class="tag">Dark · landscape</span><div class="logo"><div class="name">Yvonne’s</div><div class="ruler"><i></i><span class="est">Est. 2027</span><i></i></div><div class="tag2">Time-honoured recipes</div></div></div>
-    <div class="tile sq" style="--ink:#F1EEE5;--ground:#356373"><span class="tag">Dark · square</span><div class="logo"><div class="est">Est. 2027</div><div class="name">Yvonne’s</div><div class="sep"></div><div class="tag2">Time-honoured recipes</div></div></div>
-  </div>
-  <div class="palette">
-    <div class="eyebrow">The palette</div>
-    <div class="swatches">
-    <div class="sw"><div class="chip" style="background:#356373"></div><div class="lab">Deep teal</div><div class="hex">#356373</div><div class="for">Main logo, headings, packaging</div></div>
-    <div class="sw"><div class="chip" style="background:#F1EEE5"></div><div class="lab">Soft porcelain</div><div class="hex">#F1EEE5</div><div class="for">Main background, website</div></div>
-    <div class="sw"><div class="chip" style="background:#A8C0BA"></div><div class="lab">Sea glass</div><div class="hex">#A8C0BA</div><div class="for">Secondary panels, tissue paper</div></div>
-    <div class="sw"><div class="chip" style="background:#C5A16B"></div><div class="lab">Muted brass</div><div class="hex">#C5A16B</div><div class="for">Small highlights, decorative details</div></div>
-    <div class="sw"><div class="chip" style="background:#35484B"></div><div class="lab">Deep slate</div><div class="hex">#35484B</div><div class="for">Body text, fine print</div></div>
-    </div>
-  </div>
-  <div class="optnotes">
-    <div><h4>The ink</h4><p>Enamelware, old kitchen tiles, an apothecary jar. Deep teal is calm and confident rather than warm; the warmth comes from the brass, the handwriting and photographs of the bakes.</p></div>
-    <div><h4>The family</h4><p>Porcelain is a cooler, greyer cream, which keeps the teal from looking muddy. Brass is the one warm note, so use it sparingly and it will shine.</p></div>
-    <div><h4>Reversed</h4><p>Porcelain on teal has a mid-century grocer feel, like a painted tin or an old shop front.</p></div>
-  </div>
-  <p class="use">Best if standing out matters more than feeling cosy.</p>
-</section>
-
-<section class="opt">
-  <div class="opthead">
-    <div class="eyebrow">Option D</div>
     <h2>Delft blue</h2>
     <span class="pair">#2F4A86 on #F4F0E7</span>
   </div>
@@ -295,7 +271,7 @@ footer{padding-top:32px;font-size:14px;color:var(--muted);display:flex;flex-dire
 
 <section class="opt">
   <div class="opthead">
-    <div class="eyebrow">Option E</div>
+    <div class="eyebrow">Option C</div>
     <h2>Heritage olive</h2>
     <span class="pair">#59634A on #F2EDE0</span>
   </div>
@@ -312,21 +288,125 @@ footer{padding-top:32px;font-size:14px;color:var(--muted);display:flex;flex-dire
     <div class="sw"><div class="chip" style="background:#59634A"></div><div class="lab">Heritage olive</div><div class="hex">#59634A</div><div class="for">Main logo, headings, packaging</div></div>
     <div class="sw"><div class="chip" style="background:#F2EDE0"></div><div class="lab">Oatmeal ivory</div><div class="hex">#F2EDE0</div><div class="for">Main background, website</div></div>
     <div class="sw"><div class="chip" style="background:#ADB19A"></div><div class="lab">Soft sage</div><div class="hex">#ADB19A</div><div class="for">Secondary panels, tissue paper</div></div>
-    <div class="sw"><div class="chip" style="background:#C17B5C"></div><div class="lab">Terracotta</div><div class="hex">#C17B5C</div><div class="for">Small highlights, decorative details</div></div>
+    <div class="sw"><div class="chip" style="background:#C17B5C"></div><div class="lab">Clay pot</div><div class="hex">#C17B5C</div><div class="for">Small highlights, decorative details</div></div>
     <div class="sw"><div class="chip" style="background:#424638"></div><div class="lab">Dark moss</div><div class="hex">#424638</div><div class="for">Body text, fine print</div></div>
     </div>
   </div>
   <div class="optnotes">
     <div><h4>The ink</h4><p>Olive oil tins, kitchen-garden herbs, a farmhouse dresser. Quiet and earthy; it lets the bakes be the colour.</p></div>
-    <div><h4>The family</h4><p>Oatmeal, sage and moss are all soft greens and greiges; the terracotta accent is the spark that keeps it from feeling sleepy.</p></div>
+    <div><h4>The family</h4><p>Oatmeal, sage and moss are all soft greens and greiges; the clay-pot accent is the spark that keeps it from feeling sleepy.</p></div>
     <div><h4>Reversed</h4><p>Oatmeal on olive is the most understated dark version: it suits a market stall, a recipe card or a linen bag.</p></div>
   </div>
   <p class="use">Best if the brand should feel natural and unfussy rather than grand.</p>
 </section>
 
+<section class="group">
+  <div class="sechead">
+    <div class="eyebrow">Also considered</div>
+    <h2>Two that did not make the top three</h2>
+  </div>
+  <div class="prose">
+    <p>Both are good, and both are worth printing alongside the top three. Each one sits close to a direction above, which is why it came second. If people prefer one of these in testing, that is useful to know.</p>
+  </div>
+</section>
+
+<section class="opt">
+  <div class="opthead">
+    <div class="eyebrow">Option D</div>
+    <h2>Warm terracotta</h2>
+    <span class="pair">#995648 on #F5E9DC</span>
+  </div>
+  <p class="feeling">Welcoming, handmade, delicious and personal. This direction feels particularly connected to baking.</p>
+  <div class="grid">
+    <div class="tile land" style="--ink:#995648;--ground:#F5E9DC"><span class="tag">Light · landscape</span><div class="logo"><div class="name">Yvonne’s</div><div class="ruler"><i></i><span class="est">Est. 2027</span><i></i></div><div class="tag2">Time-honoured recipes</div></div></div>
+    <div class="tile sq" style="--ink:#995648;--ground:#F5E9DC"><span class="tag">Light · square</span><div class="logo"><div class="est">Est. 2027</div><div class="name">Yvonne’s</div><div class="sep"></div><div class="tag2">Time-honoured recipes</div></div></div>
+    <div class="tile land" style="--ink:#F5E9DC;--ground:#995648"><span class="tag">Dark · landscape</span><div class="logo"><div class="name">Yvonne’s</div><div class="ruler"><i></i><span class="est">Est. 2027</span><i></i></div><div class="tag2">Time-honoured recipes</div></div></div>
+    <div class="tile sq" style="--ink:#F5E9DC;--ground:#995648"><span class="tag">Dark · square</span><div class="logo"><div class="est">Est. 2027</div><div class="name">Yvonne’s</div><div class="sep"></div><div class="tag2">Time-honoured recipes</div></div></div>
+  </div>
+  <div class="palette">
+    <div class="eyebrow">The palette</div>
+    <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#995648"></div><div class="lab">Warm terracotta</div><div class="hex">#995648</div><div class="for">Main logo, headings, packaging</div></div>
+    <div class="sw"><div class="chip" style="background:#F5E9DC"></div><div class="lab">Biscuit cream</div><div class="hex">#F5E9DC</div><div class="for">Main background, website</div></div>
+    <div class="sw"><div class="chip" style="background:#D9A18E"></div><div class="lab">Soft clay</div><div class="hex">#D9A18E</div><div class="for">Wrapping and panels without words</div></div>
+    <div class="sw"><div class="chip" style="background:#C39A58"></div><div class="lab">Honey gold</div><div class="hex">#C39A58</div><div class="for">Small highlights, decorative details</div></div>
+    <div class="sw"><div class="chip" style="background:#55443B"></div><div class="lab">Dark cocoa</div><div class="hex">#55443B</div><div class="for">Body text, fine print</div></div>
+    </div>
+  </div>
+  <div class="optnotes">
+    <div><h4>The ink</h4><p>A baked crust, a clay oven, a flowerpot on the windowsill. The most edible-looking of the five, and the closest to the colour of the bakes themselves.</p></div>
+    <div><h4>The family</h4><p>All warm, no cool colour anywhere: biscuit, clay, honey and cocoa. Cosy, but it sits nearest to the brown-and-kraft look many home bakeries already use.</p></div>
+    <div><h4>Worth knowing</h4><p>A shade darker than first proposed (was #A65D4E), so small print is clear. Keep the logo on biscuit cream; on soft clay it fades.</p></div>
+  </div>
+  <p class="use">Best if the brand should feel like the kitchen it comes from. Second to burgundy, which is close to it and less like other home bakeries.</p>
+</section>
+
+<section class="opt">
+  <div class="opthead">
+    <div class="eyebrow">Option E</div>
+    <h2>Deep teal</h2>
+    <span class="pair">#356373 on #F1EEE5</span>
+  </div>
+  <p class="feeling">Refined, traditional and slightly more contemporary. Think vintage enamelware and an old-fashioned kitchen.</p>
+  <div class="grid">
+    <div class="tile land" style="--ink:#356373;--ground:#F1EEE5"><span class="tag">Light · landscape</span><div class="logo"><div class="name">Yvonne’s</div><div class="ruler"><i></i><span class="est">Est. 2027</span><i></i></div><div class="tag2">Time-honoured recipes</div></div></div>
+    <div class="tile sq" style="--ink:#356373;--ground:#F1EEE5"><span class="tag">Light · square</span><div class="logo"><div class="est">Est. 2027</div><div class="name">Yvonne’s</div><div class="sep"></div><div class="tag2">Time-honoured recipes</div></div></div>
+    <div class="tile land" style="--ink:#F1EEE5;--ground:#356373"><span class="tag">Dark · landscape</span><div class="logo"><div class="name">Yvonne’s</div><div class="ruler"><i></i><span class="est">Est. 2027</span><i></i></div><div class="tag2">Time-honoured recipes</div></div></div>
+    <div class="tile sq" style="--ink:#F1EEE5;--ground:#356373"><span class="tag">Dark · square</span><div class="logo"><div class="est">Est. 2027</div><div class="name">Yvonne’s</div><div class="sep"></div><div class="tag2">Time-honoured recipes</div></div></div>
+  </div>
+  <div class="palette">
+    <div class="eyebrow">The palette</div>
+    <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#356373"></div><div class="lab">Deep teal</div><div class="hex">#356373</div><div class="for">Main logo, headings, packaging</div></div>
+    <div class="sw"><div class="chip" style="background:#F1EEE5"></div><div class="lab">Soft porcelain</div><div class="hex">#F1EEE5</div><div class="for">Main background, website</div></div>
+    <div class="sw"><div class="chip" style="background:#A8C0BA"></div><div class="lab">Sea glass</div><div class="hex">#A8C0BA</div><div class="for">Secondary panels, tissue paper</div></div>
+    <div class="sw"><div class="chip" style="background:#C5A16B"></div><div class="lab">Muted brass</div><div class="hex">#C5A16B</div><div class="for">Small highlights, decorative details</div></div>
+    <div class="sw"><div class="chip" style="background:#35484B"></div><div class="lab">Deep slate</div><div class="hex">#35484B</div><div class="for">Body text, fine print</div></div>
+    </div>
+  </div>
+  <div class="optnotes">
+    <div><h4>The ink</h4><p>Enamelware, old kitchen tiles, an apothecary jar. Deep teal is calm and confident rather than warm; the warmth comes from the brass, the handwriting and photographs of the bakes.</p></div>
+    <div><h4>The family</h4><p>Porcelain is a cooler, greyer cream, which keeps the teal from looking muddy. Brass is the one warm note, so use it sparingly and it will shine.</p></div>
+    <div><h4>Reversed</h4><p>Porcelain on teal has a mid-century grocer feel, like a painted tin or an old shop front.</p></div>
+  </div>
+  <p class="use">Best if standing out matters more than feeling cosy. Second to Delft blue, which is close to it with a stronger story.</p>
+</section>
+
+<section>
+  <div class="sechead">
+    <div class="eyebrow">04 · Taking it to the printer</div>
+    <h2>Judge the colour on the real thing</h2>
+  </div>
+  <div class="prose">
+    <p>A screen makes colour with light and a printer makes it with ink, so the same colour can come out duller or darker on paper. Decide only from the printer’s proof, never from a phone or a home printer.</p>
+  </div>
+  <ol class="steps">
+    <li><strong>Bring this page and the colour codes.</strong> Ask the printer to match each main colour to its nearest Pantone colour. The printer converts the colours on their own machines, so let them do it rather than bringing your own print numbers.</li>
+    <li><strong>Ask for proofs on the actual material.</strong> The box board, the sticker paper, the kraft bag. Shiny paper, matte paper and brown kraft each change how a colour looks.</li>
+    <li><strong>Print every direction on the same items.</strong> The same box and the same sticker for each, so the colour is the only thing that changes.</li>
+    <li><strong>Look at the proofs in daylight</strong>, and in the light where the bakes will be sold.</li>
+    <li><strong>Write down the Pantone codes</strong> the printer used for the winner, next to its colour codes, and ask for those same codes every time.</li>
+  </ol>
+</section>
+
+<section>
+  <div class="sechead">
+    <div class="eyebrow">05 · Testing it with people</div>
+    <h2>Ask people who would buy from her</h2>
+  </div>
+  <ol class="steps">
+    <li><strong>Show the printed packaging, not a screen.</strong> People react differently to a logo on a real box than to a picture of it.</li>
+    <li><strong>Ask people like her customers.</strong> Friends and family are kind, not neutral. Customers and people who buy baked goods are the ones who count.</li>
+    <li><strong>Put them all out together</strong>, in a different order for each person, and do not say which one you like.</li>
+    <li><strong>Ask “Which one would you pick up, and why?”</strong> Not “Which looks more homely?”, because naming a word nudges people towards it.</li>
+    <li><strong>Then ask for three words</strong> from a list that mixes good and bad: warm, old-fashioned, elegant, dull, fresh, cheap, homemade, expensive. The words people choose say more than the vote.</li>
+    <li><strong>Write down the reasons, not only the pick.</strong> Fifteen to thirty people is a sensible rough number: enough to see a pattern, not proof.</li>
+  </ol>
+</section>
+
 <footer>
   <div>The establishment year is set to 2027 on every version and can be changed. The monogram stamp (a single Y in a double ring) and all exports are in the working canvas.</div>
-  <div>Burgundy, deep teal, Delft blue and heritage olive each clear the strictest contrast level for large lettering on their cream. Warm terracotta clears the standard level, which is enough for the logo and headings; its small print belongs in dark cocoa.</div>
+  <div>All five main colours clear the strictest contrast level for large lettering on their cream. The secondary and accent colours do not, which is why they are kept for shapes and wrapping rather than words.</div>
 </footer>
 </div>
 </body>
