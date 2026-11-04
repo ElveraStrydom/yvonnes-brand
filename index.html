@@ -100,6 +100,10 @@ section:last-of-type{border-bottom:0}
 .role strong{font-weight:600}
 .role span{font-size:15.5px;color:var(--muted)}
 section.group{padding-bottom:8px;border-bottom:0}
+a{color:var(--accent);text-underline-offset:3px}
+.dl{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;font-size:17px}
+.dl a{font-weight:600;min-height:44px;display:inline-flex;align-items:center}
+.dl span{font-size:15px;color:var(--muted)}
 .steps{display:flex;flex-direction:column;gap:12px;margin:0;padding-left:1.4em;max-width:68ch}
 .steps li{padding-left:4px}
 .steps strong{font-weight:600}
@@ -126,6 +130,7 @@ section.group{padding-bottom:8px;border-bottom:0}
   .sechead{break-inside:avoid;break-after:avoid}
   section.group{padding-bottom:0}
   footer{break-inside:avoid}
+  .dl{display:none}
 }
 footer{padding-top:32px;font-size:14px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
 @media (prefers-reduced-motion:no-preference){.tile{transition:transform .2s ease}.tile:hover{transform:translateY(-2px)}}
@@ -137,6 +142,7 @@ footer{padding-top:32px;font-size:14px;color:var(--muted);display:flex;flex-dire
   <div class="eyebrow">Rebrand · November 2026</div>
   <h1>Yvonne’s: five directions</h1>
   <p class="lede">One logo, one slogan, one pair of typefaces, and three recommended colour directions and two more that were also considered. Each is shown on its own cream and reversed on its main colour, in landscape and square, with the full palette underneath, followed by how to take it to a printer and test it with people.</p>
+  <p class="dl"><a href="yvonnes-five-directions-print-version.pdf" download>Download the print version</a> <span>PDF, 10 pages, one page per colour direction</span></p>
 </header>
 
 <section>
@@ -381,7 +387,7 @@ footer{padding-top:32px;font-size:14px;color:var(--muted);display:flex;flex-dire
     <p>A screen makes colour with light and a printer makes it with ink, so the same colour can come out duller or darker on paper. Decide only from the printer’s proof, never from a phone or a home printer.</p>
   </div>
   <ol class="steps">
-    <li><strong>Bring this page and the colour codes.</strong> Ask the printer to match each main colour to its nearest Pantone colour. The printer converts the colours on their own machines, so let them do it rather than bringing your own print numbers.</li>
+    <li><strong>Bring the <a href="yvonnes-five-directions-print-version.pdf" download>print version</a> and the colour codes.</strong> Ask the printer to match each main colour to its nearest Pantone colour. The printer converts the colours on their own machines, so let them do it rather than bringing your own print numbers.</li>
     <li><strong>Ask for proofs on the actual material.</strong> The box board, the sticker paper, the kraft bag. Shiny paper, matte paper and brown kraft each change how a colour looks.</li>
     <li><strong>Print every direction on the same items.</strong> The same box and the same sticker for each, so the colour is the only thing that changes.</li>
     <li><strong>Look at the proofs in daylight</strong>, and in the light where the bakes will be sold.</li>
